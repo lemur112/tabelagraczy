@@ -1,0 +1,113 @@
+<form (ngSubmit)="Add()" #gamerForm="ngForm">
+
+  <div class="d-flex justify-content-around">
+    <div>
+      <label for="name">Podaj imię:
+        <input class="form-control" type="text" id="name" name="imie" [(ngModel)]="imie" required>
+      </label>
+    </div>
+    
+    <div>
+      <label for="name">Podaj nazwisko:
+        <input class="form-control" type="text" id="name" name="nazwisko" [(ngModel)]="nazwisko" required>
+      </label>
+    </div>
+    
+    <div>
+      <label for="name">Podaj nick:
+        <input class="form-control" type="text" id="name" name="nick" [(ngModel)]="nick" required>
+      </label>
+    </div>
+    
+    <div>
+      <label for="game">Gra:</label>
+      <select class="form-select" name="game" required [(ngModel)]="game">
+        <option selected>Wybierz grę:</option>
+        <option value="cs2">Counter-Strike Global Offensive 2</option>
+        <option value="val">Valorant</option>
+        <option value="lol">League of Legends</option>
+      </select>
+    </div>
+
+    
+    
+    <div>
+      <br>
+    <button class="btn btn-primary" name="btn" type="submit">Dodaj</button>
+  </div>
+</div><br><br>
+</form>
+<div class="d-flex justify-content-evenly">
+  <div>
+    <label for="">
+      <b>Gracze CS2:</b>
+     </label>
+    <table class="table table-striped" id="cs2">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">L.p</th>
+          <th scope="col">Imię</th>
+          <th scope="col">Nazwisko</th>
+          <th scope="col">Nick</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let gracz of graczecs2; let id = index">
+          <td>{{id + 1}}</td>
+          <td>{{gracz.imie}}</td>
+          <td>{{gracz.nazwisko}}</td>
+          <td>{{gracz.nick}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<div>
+ <label for="">
+  <b>Gracze Valorant:</b>
+ </label>
+  <table class="table table-striped" id="valorant">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">L.p</th>
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Nick</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gracz of graczeval; let id = index">
+        <td>{{id + 1}}</td>
+        <td>{{gracz.imie}}</td>
+        <td>{{gracz.nazwisko}}</td>
+        <td>{{gracz.nick}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <label for="">
+    <b>Gracze League of Legends:</b>
+   </label>
+  <table class="table table-striped" id="lol">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">L.p</th>
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Nick</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gracz of graczelol; let id = index">
+        <td>{{id + 1}}</td>
+        <td>{{gracz.imie}}</td>
+        <td>{{gracz.nazwisko}}</td>
+        <td>{{gracz.nick}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
